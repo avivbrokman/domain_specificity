@@ -1,4 +1,4 @@
-name: BioIFT3
+name: DomainSpecificity
 channels:
   - pytorch
   - nvidia
@@ -290,4 +290,4 @@ dependencies:
       - threadpoolctl==3.2.0
       - tokenizers==0.13.3
       - transformers==4.32.0
-prefix: /home/ubuntu/miniconda3/envs/BioIFT3
+prefix: /home/ubuntu/miniconda3/envs/DomainSpecificity
