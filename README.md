@@ -105,24 +105,24 @@ deepspeed main.py /
 To run **64**-shot finetuning without deepspeed strategies, run:
 
 ```
-deepspeed main.py /
---model_name_or_path $MODEL /
---generation_max_length $MAX_LENGTH /
---num_train_epochs $EPOCHS /
---dataset_name $DATASET /
---template $TEMPLATE /
---metric_for_best_model $METRIC /
---per_device_train_batch_size 1 /
---do_train /
---do_predict /
---predict_with_generate /
---base_data_path data/processed_data /
---evaluation_strategy no /
---warmup_ratio 0.1 /
---gradient_accumulation 32 /
---report_to none /
---ddp_find_unused_parameters false
---max_train_examples 64 /
+deepspeed main.py \
+--model_name_or_path $MODEL \
+--generation_max_length $MAX_LENGTH \
+--num_train_epochs $EPOCHS \
+--dataset_name $DATASET \
+--template $TEMPLATE \
+--metric_for_best_model $METRIC \
+--per_device_train_batch_size 1 \
+--do_train \
+--do_predict \
+--predict_with_generate \
+--base_data_path data/processed_data \
+--evaluation_strategy no \
+--warmup_ratio 0.1 \
+--gradient_accumulation 32 \
+--report_to none \
+--ddp_find_unused_parameters false \
+--max_train_examples 64 \
 --data_seed $SEED
 ```
 To run **16**-shot finetuning, change `max_train_examples` to `16`.
