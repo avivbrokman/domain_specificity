@@ -99,6 +99,7 @@ deepspeed main.py \
 --report_to none \
 --eval_delay 10 \
 --ddp_find_unused_parameters false
+--output_dir output
 ```
 
 ### Few-shot finetuning
@@ -124,6 +125,7 @@ deepspeed main.py \
 --ddp_find_unused_parameters false \
 --max_train_examples 64 \
 --data_seed $SEED
+--output_dir output
 ```
 To run **16**-shot finetuning, change `max_train_examples` to `16`.
 
@@ -131,3 +133,6 @@ To run **16**-shot finetuning, change `max_train_examples` to `16`.
 To use CPU offloading for larger models, add another optional argument:
 
 ``` --deepspeed deepspeed_configs/ds_config_stage3.json ```
+
+### Output
+Output will be found in the `output` directory.  Change the `--output dir` option to choose another location.
